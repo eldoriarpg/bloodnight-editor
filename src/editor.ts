@@ -4,6 +4,7 @@ import { Mob, useStore } from "./store";
 
 export function useCurrentMob(): Mob | null {
   const mobs = useStore((state) => state.mobs);
+  const elements = usePathElements();
   const id = useParams()["mob"];
   if (id === undefined) {
     return null;

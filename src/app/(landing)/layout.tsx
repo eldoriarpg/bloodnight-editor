@@ -18,5 +18,3 @@ export default function EmptyLayout({
     </html>
   );
 }
-
-export const runtime = "edge"

@@ -1,7 +1,10 @@
+import { ReactNode } from "react";
 import Icon from "../../components/Icon";
 import { OpenEditorButton } from "../../components/OpenEditorButton";
+import EmptyLayout from "./layout";
 
 export default function Page() {
+  const openEditor = () => {};
   return (
     <div className="flex flex-col justify-between h-full">
       <div className="flex flex-col justify-center items-center pt-24">
@@ -50,4 +53,3 @@ function VersionInformation() {
     </div>
   );
 }
-
