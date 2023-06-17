@@ -6,7 +6,7 @@ const dataTypeSchema = z.string();
 const inputSchema = z.object({
   name: z.string(),
   type: dataTypeSchema,
-  struct: z.string()
+  struct: z.string(),
 });
 
 const outputSchema = z.object({
@@ -14,7 +14,7 @@ const outputSchema = z.object({
   dataType: dataTypeSchema,
   link: z.string(),
   struct: z.string(),
-})
+});
 
 const executionSchema = z.object({});
 
@@ -29,7 +29,7 @@ export const schema = z.array(
     }),
     inputs: z.array(inputSchema),
     outputs: z.array(outputSchema),
-    executions: z.array(executionSchema)
+    executions: z.array(executionSchema),
   })
 );
 
@@ -37,5 +37,5 @@ export type Input = z.infer<typeof inputSchema>;
 export type Output = z.infer<typeof outputSchema>;
 
 export function parseSchema(obj: unknown) {
-  return schema.safeParse(obj)
+  return schema.safeParse(obj);
 }
