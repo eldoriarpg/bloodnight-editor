@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { RootNavigation } from "../components/RootNavigation";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={clsx(inter.className, "flex flex-col")}>
         <RootNavigation />
         {children}
       </body>
