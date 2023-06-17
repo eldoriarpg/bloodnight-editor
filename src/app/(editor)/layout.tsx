@@ -13,3 +13,5 @@ export default function RootLayout({
     </EmptyLayout>
   );
 }
+
+export const runtime = "edge"
