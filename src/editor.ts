@@ -19,6 +19,6 @@ function usePathElements() {
 export function useEditMob(id: string) {
   const elements = usePathElements();
   const router = useRouter();
-  const newPath = ["mobs", id, ...elements.slice(2)];
+  const newPath = ["/mobs", id, ...elements.slice(2)];
   return () => router.replace(newPath.join("/"));
 }

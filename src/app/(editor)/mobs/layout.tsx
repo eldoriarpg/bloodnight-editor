@@ -5,7 +5,7 @@ import Icon from "../../../components/Icon";
 import { useCurrentMob, useEditMob } from "../../../editor";
 import { Mob, useStore } from "../../../store";
 
-export default function Page({ children }: { children: ReactNode }) {
+export default function Layout({ children }: { children: ReactNode }) {
   const mobs = useStore((state) => state.mobs);
   return (
     <div className="grid grid-cols-12 overflow-hidden h-full">
@@ -39,14 +39,6 @@ function EditIcon({ mob, visible }: { mob: Mob; visible: boolean }) {
       className={clsx(!visible && "invisible")}
     >
       <Icon icon="ic:outline-edit" width={30} />
-    </button>
-  );
-}
-
-function CloseIcon({ mob }: { mob: Mob }) {
-  return (
-    <button type="button" onClick={close}>
-      <Icon icon="material-symbols:close" width={30} />
     </button>
   );
 }
