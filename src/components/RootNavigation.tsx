@@ -1,34 +1,19 @@
 "use client";
-import clsx from "clsx";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 export function RootNavigation() {
   return (
-    <div className="shadow flex">
-      <NavItem path="/mobs">Mobs</NavItem>
-      <NavItem path="/settings">Settings</NavItem>
-      <NavItem path="/items">Items</NavItem>
-      <NavItem path="/default_drops">Default Drops</NavItem>
-    </div>
-  );
-}
-
-type NavItemProps = {
-  path: string;
-  children: ReactNode;
-};
-
-function NavItem({ path, children }: NavItemProps) {
-  const pathname = usePathname();
-  const isActive = pathname.startsWith(path);
-  return (
-    <Link
-      href={path}
-      className={clsx("p-4 transition-colors", isActive && "text-red-500")}
-    >
-      {children}
-    </Link>
+    <Navbar>
+      <Container>
+        <Navbar.Brand>Bloodnight</Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link as={Link} href="/mobs">Mobs</Nav.Link>
+          <Nav.Link as={Link} href="/settings">Settings</Nav.Link>
+          <Nav.Link as={Link} href="/items">Items</Nav.Link>
+          <Nav.Link as={Link} href="/default_drops">Default Drops</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 }
