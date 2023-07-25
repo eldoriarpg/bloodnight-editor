@@ -14,7 +14,7 @@ export default function EmptyLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, "flex flex-col")}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

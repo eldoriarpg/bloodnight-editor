@@ -4,18 +4,20 @@ import clsx from "clsx";
 import Icon from "../../../components/Icon";
 import { useCurrentMob, useEditMob } from "../../../editor";
 import { Mob, useStore } from "../../../store";
+import { Col, Container, ListGroup } from "react-bootstrap";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const mobs = useStore((state) => state.mobs);
   return (
-    <div className="grid grid-cols-12 overflow-hidden h-full">
-      <div className="col-span-2">
-        {mobs.map((mob) => (
-          <MobItem key={mob.id} mob={mob} />
-        ))}
-      </div>
-      <div className="col-span-10">{children}</div>
-    </div>
+    <ListGroup>
+  {
+    mobs.map(mob => (
+      <ListGroup.Item key={mob.id}>
+        {mob.name}
+      </ListGroup.Item>
+    ))
+  }
+    </ListGroup >
   );
 }
 
